@@ -14,7 +14,7 @@ pipeline {
         stage('Build And Sonar'){
             steps{
                 withCredentials([string(credentialsId: 'Sonar-Token', variable: 'SONAR_TOKEN')]) {
-                    sh '''mvn clean verify sonar:sonar \
+                    sh ''' mvn clean verify sonar:sonar \
                     -Dsonar.projectKey=cwvj-devsecops-demo \
                     -Dsonar.host.url="http://${SONAR_IP}:9000" \
                     -Dsonar.token="${SONAR_TOKEN}" \
