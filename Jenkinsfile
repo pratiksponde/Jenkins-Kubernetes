@@ -18,7 +18,7 @@ pipeline {
             steps{
                 withCredentials([string(credentialsId: 'Sonar-Token', variable: 'SONAR_TOKEN')]) {
                     sh ''' mvn clean verify sonar:sonar \
-                    -Dsonar.projectKey=cwvj-devsecops-demo \
+                    -Dsonar.projectKey=Project1 \
                     -Dsonar.host.url="http://${SONAR_IP}:9000" \
                     -Dsonar.token="${SONAR_TOKEN}" \
                     -Dsonar.qualitygate.wait=true
